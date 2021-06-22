@@ -33,7 +33,7 @@ nav ul li {
     padding-bottom: 10px;
   }
 
-  nav ul li a {
+nav ul li a {
     padding: 5px 10px;
     text-decoration: none;
   }
@@ -58,7 +58,7 @@ img {
 
 aside {
     float: right;
-    background-color: indianred;
+    background-color:lavenderblush;
     width: 15%;
     text-align: center;
     margin-top: 360px;
