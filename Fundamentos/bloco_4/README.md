@@ -1,1 +1,1 @@
-Este diretótio contém todos os exercícios resolvidos no Bloco 4
+Este diretório contém todos os exercícios resolvidos no Bloco 4
