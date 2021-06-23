@@ -1,0 +1,1 @@
+Esta pas contém todos os exercícios resolvidos no dia 2
