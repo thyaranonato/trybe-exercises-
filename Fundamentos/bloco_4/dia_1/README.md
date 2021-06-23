@@ -1,0 +1,1 @@
+Esta pasta contém todos os exercícios resolvidos no dia 1 do bloco 4
