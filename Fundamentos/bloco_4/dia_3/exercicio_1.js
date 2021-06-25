@@ -20,6 +20,6 @@ for (let index = 0; index < n; index += 1) {
   linhaDeEntrada = linhaDeEntrada + simbolo;
 }
 
-for (let index = 0; index < n; index += 1) {
+for (let index = 0; index < n; index += 1) {  
   console.log(linhaDeEntrada);
 }
