@@ -13,9 +13,9 @@ n = 5
 
 let base = 5;
 let simbolo = "*";
-let LinhaDeEntrada = "";
+let linhaDeEntrada = "";
 
 for (let index = 0; index < base; index += 1) {
-  LinhaDeEntrada = LinhaDeEntrada + simbolo;
-  console.log(LinhaDeEntrada);
+  linhaDeEntrada = linhaDeEntrada + simbolo;
+  console.log(linhaDeEntrada);
 }
