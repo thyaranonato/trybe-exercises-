@@ -1,0 +1,1 @@
+Esta pasta contém os exercícios realizados no dia 4
