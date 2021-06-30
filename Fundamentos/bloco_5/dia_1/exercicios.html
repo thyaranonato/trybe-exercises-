@@ -54,15 +54,50 @@
  Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
-      document.getElementsByTagName("p")[0].innerText = "Me vejo trabalhando como desenvolvedora de software";
       
-      document.getElementsByTagName("main")[0].style.backgroundColor = "rgb(76,164,109)";
-
-      document.getElementsByClassName("center-content")[0].style.backgroundColor = "white";
-
-      document.getElementsByTagName("h1")[0].innerText = "Exercício 5.1 - JavaScript";
-
+      // Exercício 1
+      function changeText() {
+        let p = document.getElementsByTagName("p")[1];
+        p.innerHTML = "Me vejo trabalhando como desenvolvedora de software";
+      }
+      changeText();
       
+      // Exercício 2
+      function changeColor() {
+        let color = document.getElementsByTagName("main")[0];
+        color.style.backgroundColor = "rgb(76,164,109)";
+      }
+      changeColor();
+
+      // Exerício 3
+      function changeColor2() {
+        let color2 = document.getElementsByClassName("center-content")[0]; 
+        color2.style.backgroundColor = "white";
+      }
+      changeColor2();
+
+      // Exerício 4
+      function changeText2() {
+        let changeTag = document.getElementsByTagName("h1")[0];
+        changeTag.innerText = "Exercício 5.1 - JavaScript";
+      }
+      changeText2();
+
+      // Exerício 5
+      function changeTagsP() {
+        let changeTextP = document.getElementsByTagName("p")[0];
+        changeTextP.innerHTML = changeTextP.innerHTML.toUpperCase();
+      }
+      changeTagsP();
+      
+      // Exerício 6
+      function showTagsP() {
+        let p = document.getElementsByTagName("p");
+        for (let index = 0; index < p.length; index +=1) {
+          console.log(p[index].innerHTML);
+        }
+      }
+      showTagsP();
 
     </script>
   </body>
