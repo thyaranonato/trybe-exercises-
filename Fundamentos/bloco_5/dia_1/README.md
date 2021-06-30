@@ -1,0 +1,1 @@
+Esta pasta contém os exercícios resolvidos no dia 1 do bloco 5
