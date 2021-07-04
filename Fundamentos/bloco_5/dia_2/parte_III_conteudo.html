@@ -22,12 +22,15 @@
   <script>
     // Para praticar:
     // Remova todos os elementos filhos de paiDoPai 
+    // exceto pai, elementoOndeVoceEsta e primeiroFilhoDoFilho.
+    // Source: https://www.w3schools.com/js/js_htmldom_nodes.asp
+    
     let pai = document.getElementById('pai');
 
     for (let index = pai.childNodes.length - 1; index >= 0; index -= 1) {
-      let currentChildren = pai.childNodes[index];
-      if (currentChildren.id !== 'elementoOndeVoceEsta') {
-        currentChildren.remove();
+      let filhosDoPai = pai.childNodes[index];
+      if (filhosDoPai.id !== 'elementoOndeVoceEsta') {
+        filhosDoPai.remove();
       }
     }
 
