@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="paiDoPai">
+    <div id="pai">
+      <div id="primeiroFilho"></div>
+      <div id="elementoOndeVoceEsta">
+        <div id="primeiroFilhoDoFilho"></div>
+        <div id="segundoEUltimoFilhoDoFilho"></div>
+      </div>
+      Atenção!
+      <div id="terceiroFilho"></div>
+      <div id="quartoEUltimoFilho"></div>
+    </div>
+  </div>
+  <script>
+    // Para praticar:
+    // Remova todos os elementos filhos de paiDoPai 
+    // exceto pai, elementoOndeVoceEsta e primeiroFilhoDoFilho.
+    // Source: https://www.w3schools.com/js/js_htmldom_nodes.asp
+    
+    let pai = document.getElementById('pai');
+
+    for (let index = pai.childNodes.length - 1; index >= 0; index -= 1) {
+      let filhosDoPai = pai.childNodes[index];
+      if (filhosDoPai.id !== 'elementoOndeVoceEsta') {
+        filhosDoPai.remove();
+      }
+    }
+
+    let segundoEUltimoFilhoDoFilho = document.getElementById('segundoEUltimoFilhoDoFilho');
+    segundoEUltimoFilhoDoFilho.remove();
+
+  </script>
+</body>
+</html>
