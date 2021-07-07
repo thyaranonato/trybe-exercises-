@@ -178,6 +178,18 @@ addLegend('');
 // Implemente uma função que adiciona um evento que, ao clicar no elemento com a tag <div> referente a cor da sua tarefa, atribua a este elemento a classe task selected , ou seja, quando sua tarefa possuir a classe task selected , ela estará selecionada.
 // Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task , ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
 
+function addEvento() {
+  let evento1 = document.querySelector('.task');
+  let selectedTask = document.getElementsByClassName('task selected');
+  
+  evento1.addEventListener('click', function(event) {
+    if (selectedTask.length === 0) {
+      event.target.className = 'task selected';
+    } else {
+      event.target.className = 'task';
+    }  
+  })
+} addEvento();
 
 // Exercício 10:
 // Implemente uma função que adiciona um evento que, ao clicar em um dia do mês no calendário, atribua a este dia a cor da legenda da sua tarefa selecionada.
