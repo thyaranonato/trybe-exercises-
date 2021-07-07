@@ -149,6 +149,14 @@ unZoomDay();
 // Implemente uma função que adiciona uma tarefa personalizada ao calendário. A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
 // O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks" .
 
+function addTask(nameOfTask) {
+  let taskOfDiv = document.querySelector('.my-tasks'); 
+  let task = document.createElement('span');
+
+  task.innerHTML = nameOfTask;
+  taskOfDiv.appendChild(task);
+}
+addTask('Estudar');
 
 // Exercício 8:
 // Implemente uma função que adiciona uma legenda com cor para a tarefa criada no exercício anterior. Esta função deverá receber como parâmetro uma string ("cor") e criar dinamicamente um elemento de tag <div> com a classe task .
