@@ -234,6 +234,7 @@ function addCompromissos() {
       alert('Erro: Digite ao menos um caractere!');
     }
   })
+  // Source: https://www.w3schools.com/JSREF/event_key_keycode.asp
   getInput.addEventListener('keyup', function(event) {
     if (event.keyCode === 13 && getInput.value.length > 0) {
       let createLi = document.createElement('li');
