@@ -217,3 +217,32 @@ changeColorOfDay();
 // Se nenhum caractere for inserido no campo input , a função deve retornar um alert com uma mensagem de erro ao clicar em "ADICIONAR".
 // Ao pressionar a tecla "enter" o evento também deverá ser disparado.
 // Dica - Propriedade: keyCode.
+
+function addCompromissos() {
+  let getInput = document.querySelector('#task-input');
+  let inputButton = document.querySelector('#btn-add');
+  let getTaskList = document.querySelector('.task-list');
+
+  inputButton.addEventListener('click', function() {
+    if (getInput.value.length > 0) {
+      let createLi = document.createElement('li');
+      createLi.innerText = getInput.value;
+
+      getTaskList.appendChild(createLi);
+      getInput.value = '';
+    } else {
+      alert('Erro: Digite ao menos um caractere!');
+    }
+  })
+  // Source: https://www.w3schools.com/JSREF/event_key_keycode.asp
+  getInput.addEventListener('keyup', function(event) {
+    if (event.keyCode === 13 && getInput.value.length > 0) {
+      let createLi = document.createElement('li');
+      createLi.innerText = getInput.value;
+
+      getTaskList.appendChild(createLi);
+      getInput.value = '';
+    }
+  })
+}
+addCompromissos();
