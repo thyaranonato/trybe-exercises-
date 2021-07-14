@@ -7,13 +7,19 @@
   <title>Document</title>
 </head>
 <body>
-  <form>
-    Email: <input type="text" name="email" type="text" placeholder="Digite seu email" required autocomplete="off" autofocus>
+  <form action="" method="GET" enctype="multipart/form-data">
+    <label for="e-mail">E-mail:
+      <input type="text" name="email" id="e-mail" type="email" placeholder="Digite seu email" required autocomplete="off" autofocus>
+    </label>
     <br><br>
-    Senha: <input type="password" name="senha" type="text" placeholder="Digite sua senha" required>
-    <br>
-    Lembre-me: <input type="checkbox" name="lembrar" type="text">
-    <br>
+    <label for="input-senha">Senha:
+      <input type="password" name="senha" id="input-senha" type="text" placeholder="Digite sua senha" required>
+    </label>
+    <br><br>
+    <label for="lembre-me">Lembre-me
+      <input type="checkbox" name="lembrar" id="lembre-me" type="text">
+    </label>
+    <br><br>
     <button type="submit">Entrar</button>
   </form>
 </body>
