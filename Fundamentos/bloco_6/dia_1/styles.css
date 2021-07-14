@@ -1,3 +1,12 @@
 #header-text {
   text-align: center;
 }
+
+legend {
+  padding: 5px 10px;
+  background-color: gray;
+}
+
+#resumo {
+  display: block;
+}
