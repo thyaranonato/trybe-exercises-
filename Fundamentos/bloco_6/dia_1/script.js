@@ -1,4 +1,5 @@
 const botaoSubmit = document.querySelector(".botao-submit");
+const botaoLimpar = document.querySelector(".botao-limpar");
 
 function criarOpcaoEstados() {
   let estados = document.getElementById('estado');
@@ -17,7 +18,6 @@ botaoSubmit.addEventListener('click', (event) => {
   event.preventDefault()
 
   let dateString = document.querySelector('#data-inicio').value;
-  let regex = "\\d{2}/\\d{2}/\\d{4}";
   let dateParts = dateString.split("/");
   
   let day = parseInt(dateParts[0]);
@@ -35,8 +35,16 @@ botaoSubmit.addEventListener('click', (event) => {
   if(year < 0) {
     alert ("Ano inválido!")
   }
-
-  if (dateParts != regex) {
-    alert ("Data com formato inválido")
-  }
 });
+
+function limpar() {
+  let limparInputs = document.querySelectorAll('input');
+  let areaDeTexto = document.querySelector('textarea');
+
+  for (let index = 0; index <limparInputs.length; index += 1) {
+    let inputUsuario = limparInputs[index];
+    inputUsuario.value= "";
+    areaDeTexto.value= "";
+  }
+}
+botaoLimpar.addEventListener("click", limpar);
