@@ -11,65 +11,67 @@
   <header id="header-text">
     <h1>Formulário de Cadastro de Currículo</h1>
   </header>
-  <br>
-  <form>
-    <fieldset>
-      <legend>Dados pessoais:</legend>
-      <br>
-      <label for="nome-input">Nome:
-        <input type="text" name="nome" id="nome-input" maxlength="40" required>
-      </label>
-      <br><br>
-      <label for="e-mail-input">E-mail:
-        <input type="text" name="e-mail" id="e-mail-input" maxlength="50" required>
-      </label>
-      <br><br>
-      <label for="cpf-input">CPF:
-        <input type="text" name="cpf" id="cpf-input" maxlength="11" required>
-      </label>
-      <br><br>
-      <label for="endereco-input">Endereço:
-        <input type="text" name="endereco" id="endereco-input" maxlength="200" required>
-      </label>
-      <br><br>
-      <label for="cidade-input">Cidade:
-        <input type="text" name="cidade" id="cidade-input" maxlength="28" required>
-      </label>
-      <br><br>
-      <select name="" id="">
-        <option value=""></option>
-      </select>
-      <br><br>
-      <label for="casa-input">Tipo:
-        <input type="radio" id="casa-input" name="tipo" value="casa" required>Casa
-      </label>
-      <label for="apto-input">
-        <input type="radio" id="apto-input" name="tipo" value="apartamento" required>Apartamento
-      </label>
-      </fieldset>
-      <br>
-    <fieldset>
-      <br>
-      <legend>Dados do seu último emprego:</legend>
-      <label for="resumo">Resumo do Currículo:</label>
-      <textarea name="resumo" cols="40" rows="5" maxlength="1000" id="resumo" required></textarea>
-      <br>
-      <label for="cargo-input">Cargo:
-        <input type="text" name="cargo" id="cargo-input" maxlength="40" required>
-      </label>
-      <br><br>
-      <label for="descr-cargo-input">Descrição do cargo:
-        <input type="text" name="descr-cargo" id="descr-cargo-input" maxlength="500" required>
-      </label>
-      <br><br>
-      <label for="data-inicio-input">Data de início:
-        <input type="text" name="data-inicio" id="data-inicio-input" required>
-      </label>
-    </fieldset>
-  </form>
-  <br>
-  <button type="submit" id="botao-submit">Enviar</button>
-  <button type="reset">Limpar</button>
+  <main>
+    <form id="form-curriculo">
+      <fieldset>
+        <legend>Dados pessoais:</legend>
+        <br>
+        <label for="nome-input">Nome:
+          <input type="text" name="nome" id="nome-input" maxlength="40" required>
+        </label>
+        <br><br>
+        <label for="e-mail-input">E-mail:
+          <input type="text" name="e-mail" id="e-mail-input" maxlength="50" required>
+        </label>
+        <br><br>
+        <label for="cpf-input">CPF:
+          <input type="text" name="cpf" id="cpf-input" maxlength="11" required>
+        </label>
+        <br><br>
+        <label for="endereco-input">Endereço:
+          <input type="text" name="endereco" id="endereco-input" maxlength="200" required>
+        </label>
+        <br><br>
+        <label for="cidade-input">Cidade:
+          <input type="text" name="cidade" id="cidade-input" maxlength="28" required>
+        </label>
+        <br><br>
+        <label for="estado">Estado:</label>
+        <select name="estado" id="estado" required>
+          <option disabled selected value>Selecione o seu estado:</option>
+        </select>
+        <br><br>
+        <label for="casa-input">Tipo:
+          <input type="radio" id="casa-input" name="tipo" value="casa" required>Casa
+        </label>
+        <label for="apto-input">
+          <input type="radio" id="apto-input" name="tipo" value="apartamento" required>Apartamento
+        </label>
+        </fieldset>
+        <br>
+      <fieldset>
+        <br>
+        <legend>Dados do seu último emprego:</legend>
+        <label for="resumo">Resumo do Currículo:</label>
+        <textarea name="resumo" cols="40" rows="5" maxlength="1000" id="resumo" placeholder="Escreva o resumo do seu currículo aqui..." required></textarea>
+        <br>
+        <label for="cargo-input">Cargo:
+          <input type="text" name="cargo" id="cargo-input" maxlength="40" required>
+        </label>
+        <br><br>
+        <label for="descr-cargo-input">Descrição do cargo:
+          <input type="text" name="descr-cargo" id="descr-cargo-input" maxlength="500" required>
+        </label>
+        <br><br>
+        <label for="data-inicio">Data de início:
+          <input type="text" name="data-inicio" id="data-inicio" value="" placeholder="dd/mm/aaaa" pattern="\d{2}/\d{2}/\d{4}" required>
+        </label>
+      </fieldset><br>
+      <button type="submit" class="botao-submit">Enviar</button>
+      <button type="button" class="botao-limpar">Limpar</button>
+    </form>
+  </main>
+  <section class="data-section"></section>
   <script src="script.js"></script>
 </body>
 </html>
