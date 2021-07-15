@@ -75,7 +75,7 @@
 
       <div class="container mb-3">
         <label class="form-label" for="data-inicio">Data de início:</label>
-        <input class="form-control" type="text" name="data-inicio" id="data-inicio" value="" placeholder="dd/mm/aaaa" pattern="\d{2}/\d{2}/\d{4}" required>
+        <input class="form-control" autocomplete="off" data-validate-field="date" type="text" name="data-inicio" id="data-inicio" placeholder="dd/mm/aaaa" required>
       </div>
       
       <div class="container mb-3">
@@ -84,6 +84,9 @@
       </div>
     </form>
   </main>
+  <section class="form-data"></section>
+  <script src="node_modules/moment/moment.js"></script>
+  <script src="/node_modules/pikaday/pikaday.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

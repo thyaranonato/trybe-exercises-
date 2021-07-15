@@ -13,27 +13,12 @@ function criarOpcaoEstados() {
 }
 criarOpcaoEstados();
 
-// Source: https://pt.stackoverflow.com/questions/91379/como-validar-data-com-angularjs-ou-jquery
-botaoSubmit.addEventListener('click', (event) => {
-  event.preventDefault()
-
-  let dateString = document.querySelector('#data-inicio').value;
-  let dateParts = dateString.split("/");
-  
-  let day = parseInt(dateParts[0]);
-  let month = parseInt(dateParts[1]);
-  let year = parseInt(dateParts[2]);
- 
-  if(day <= 0 || day > 31) {
-    alert ("Dia inválido!") 
-  }
-    
-  if(month < 0 || month > 12) {
-    alert ("Mês inválido!")
-  }
-    
-  if(year < 0) {
-    alert ("Ano inválido!")
+// Source: https://github.com/Pikaday/Pikaday
+let picker = new Pikaday({
+  field: document.getElementById('data-inicio'),
+  format: 'DD/MM/YYYY',
+  onselect: function() {
+    console.log(this.getMoment().format('DD/MM/YYYY'));
   }
 });
 
