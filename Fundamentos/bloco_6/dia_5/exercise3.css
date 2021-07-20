@@ -80,3 +80,63 @@
   padding: 20px;
   height: 1%;
 }
+
+/*Exercício 1*/
+@media print {
+  #header,
+  #navigation,
+  #footer {
+    display: none;
+  }
+  #aside {
+    float: none;
+    display: block;
+  }
+}
+
+/*Exercício 2*/
+@media screen and (max-width: 500px) {
+  #aside {
+    display: none;
+  }
+
+  body {
+    padding: 0px;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+
+  #navigation ul li {
+    display: block;
+  }
+
+  #navigation ul li a {
+    float: none;
+  }
+
+  #navigation {
+    margin-top: 80px;
+  }
+
+  #header {
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    top: 0px;
+    left: 0px;
+  }
+
+  #content {
+    width: 100%;
+  }
+
+  p {
+    width: 95%;
+  }
+
+  #footer {
+    text-align: center;
+  }
+}
