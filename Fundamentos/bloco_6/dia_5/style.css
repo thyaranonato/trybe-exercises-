@@ -66,8 +66,36 @@ p strong {
   background-color: #41197f;
 }
 
+/* Exercício 1*/
 @media screen and (min-width: 500px) {
   .card:nth-of-type(1) {
     display: block;
   }  
+}
+
+/* Exercício 2*/
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .card:nth-of-type(2) {
+    display: block;
+  }
+}
+
+/* Exercício 3*/
+@media screen and (max-width: 650px) {
+  .card:nth-of-type(3) {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .card:nth-of-type(3) {
+    display: block;
+  }
+}
+
+/* Exercício 4*/
+@media screen and (max-width: 500px) {
+  p.trick {
+    color: red;
+  }
 }
