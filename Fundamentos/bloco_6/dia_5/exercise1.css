@@ -1,0 +1,46 @@
+body {
+  font-size: 20px;
+  margin: 0 5%;
+}
+
+h1 {
+  font-size: 25px;
+  margin: 3% 0 0 0;
+}
+
+h2 {
+  font-size: 23px;
+  margin: 3% 0 0 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    background-color: darkcyan;
+    font-size: 30px;
+    margin: 20px 10%;
+  }
+
+  figure {
+    float: left;
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    background-color: darksalmon;
+    font-size: 35px;
+    margin: 25px 10%;
+    max-width: 1300px;
+  }
+}

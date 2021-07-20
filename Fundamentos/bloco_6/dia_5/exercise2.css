@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+}
+
+p {
+  padding: 15px;;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: darkslategray;
+    font-size: 20px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  p {
+    padding: 0 5px;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  body {
+    background-color: darksalmon;
+    font-size: 23px;
+  }
+
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .aside-one {
+    padding: 0 3%;
+  }
+} 
+
+@media screen and (min-width: 1000px) {
+  body {
+    background-color:darkturquoise;
+    font-size: 25px;
+  }
+
+  .container {
+    flex-wrap: nowrap;
+  }
+
+  .main-content {
+    padding: 0 2%;
+  }
+
+  .aside-two {
+    padding: 0 2%;
+  }
+
+  .aside-one {
+    padding: 0 2%;
+  }
+}
