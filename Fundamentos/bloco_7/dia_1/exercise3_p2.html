@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    .body {
+      background-color:teal;
+    }
+    #text {
+      color:seashell;
+    }
+    #button {
+      border-radius: 10%;
+      background-color: black;
+      border-style: double;
+      color: whitesmoke;
+    }  
+  </style>
+</head>
+<body class="body">
+  <span id="text"></span>
+  <button id="button">Botão!</button>
+</body>
+<script>
+  let clickCount = 0;
+  let text = document.querySelector('#text');
+
+  document.querySelector('#button').addEventListener('click', () => text.innerHTML = clickCount += 1);
+</script>
+</html>
