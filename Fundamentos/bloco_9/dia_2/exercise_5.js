@@ -1,4 +1,4 @@
-// Exercício 4 - Quando a Promise for rejeitada, imprima, via console.log , a frase "É mais de oito mil! Essa promise deve estar quebrada!"
+// Exercício 5 - Quando a Promise for bem-sucedida, encadeie nela uma segunda Promise que some os elementos do array.
 
 const fetchPromise = () => {
   const promise = new Promise((resolve, reject) => {
@@ -13,6 +13,7 @@ const fetchPromise = () => {
       (sum < 8000) ? resolve(sum) : reject();
   });
   promise.then(sum => [2, 3, 5, 10].map(number => sum / number))
+  .then(array => array.reduce((number, acc) => number + acc, 0))
   .then(msg => console.log(msg))
   .catch(() => console.log('É mais de oito mil! Essa promise deve estar quebrada!')
   );
