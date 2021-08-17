@@ -1,0 +1,1 @@
+Esta pasta contém todos os exercícios realizados durante o bloco 10.
