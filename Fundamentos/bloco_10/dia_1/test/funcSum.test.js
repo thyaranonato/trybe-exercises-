@@ -1,27 +1,33 @@
 const sum = require("../../dia_1/scr/funcSum");
 
 
-describe('Função sum retorna a soma do parâmetro a com o b', () => {
-  describe('A função sum', () => {
-    test('Existe', () => {
-      // assert.strictEqual(typeof sum, 'function');
-      expect(typeof sum).toEqual('function');
-    })
+describe('A função sum', () => {
+  test('Existe', () => {
+    // assert.strictEqual(typeof sum, 'function');
+    expect(typeof sum).toEqual('function');
+  });
+
+  test('O retorno sum(4, 5) é 9', () => {
+    // assert.strictEqual(sum(4, 5), 9);
+    expect(sum(4, 5)).toBe(9);
+  });
+
+  test('O retorno de sum(0, 0) é 0', () => {
+    // assert.strictEqual(sum(0, 0), 0);
+    expect(sum(0, 0)).toBe(0);
+  });
+
+  test('Lança um erro quando os parâmetros são 4 e "5" (string 5)', () => {
+    // assert.throws(() => sum(4, '5');
+    expect(() => {
+      sum(4, '5');
+    }).toThrow();
+  });
+
+  test('Lança mensagem de erro: "parameters must be numbers" quando realizar a chamada sum(4, "5")', () => {
+    // assert.throws(() => { sum(4, '5'); }, /^Error: parameters must be numbers$/); 
+    expect(() => {
+      sum(4, '5');
+    }).toThrow(/parameters must be numbers/);
   });
 });
-
-
-// // Exercício 1 - A função sum(a, b) retorna a soma do parâmetro a com o b
-// // Teste 1 - Teste se o retorno de sum(4, 5) é 9
-// assert.strictEqual(sum(4, 5), 9);
-
-// // Teste 2 - Teste se o retorno de sum(0, 0) é 0
-// assert.strictEqual(sum(0, 0), 0);
-
-// // Teste 3 - Teste se a função sum lança um erro quando os parâmetros são 4 e "5" (string 5)
-// assert.throws(() => {
-//   sum(4, '5');
-// });
-
-// // Teste 4 - Teste se a mensagem de erro é "parameters must be numbers" quando realizar a chamada sum(4, "5")
-// assert.throws(() => { sum(4, '5'); }, /^Error: parameters must be numbers$/); 
