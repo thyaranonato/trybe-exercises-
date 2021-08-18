@@ -1,6 +1,6 @@
 const { obj3, obj2, obj1 } = require('../../dia_1/scr/compareObj');
 
-describe('Comparando dois objetos para ver se são idênticos ou não', () => {
+describe('Comparando objetos para ver se são idênticos ou não', () => {
   test('Objeto 1 é igual ao objeto 2', () => {
     expect(obj1).toEqual(obj2);
   }); 
