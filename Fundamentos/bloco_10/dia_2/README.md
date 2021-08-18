@@ -1,1 +1,0 @@
-Esta pasta contém os exercícios resolvidos no dia 2.
