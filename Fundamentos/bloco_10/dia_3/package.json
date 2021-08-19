@@ -1,0 +1,15 @@
+{
+  "name": "dia_3",
+  "version": "1.0.0",
+  "description": "Esta pasta contém os exercícios resolvidos no dia 3.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
