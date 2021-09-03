@@ -8,12 +8,17 @@ class Form extends React.Component {
 
     this.state = {
       email: '',
+      textarea: '',
+      checkbox: false,
     }
   }
 
-  handleChange(event) {
+  handleChange({ target }) {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+
     this.setState({
-      email: event.target.value,
+      [name]: value,
     });
   }
 
@@ -21,15 +26,32 @@ class Form extends React.Component {
     return (
       <div>
         <form>
-          <span>Insira o seu email:</span>
-          <label>
-            <input 
-              id="email" name="email" type="email" onChange={this.handleChange} value={this.state.email}
-            />
-          </label>
-          <label>
-            <textarea name="textarea" id="textarea" />
-          </label>
+          <fieldset>
+            <legend>Informações pessoais:</legend>
+              <label>
+                Email:
+                <input 
+                  id="email" name="email" type="email" onChange={this.handleChange} value={this.state.email}
+                />
+              </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Textos e arquivos:</legend>
+              <label>
+              Escreva seu texto aqui:
+                <textarea name="textarea" id="textarea" onChange={this.handleChange} value={this.state.textarea} />
+              </label>
+
+              <label>
+                <input type="checkbox" name="checkbox" onChange={this.handleChange} value={this.state.checkbox}/>
+              </label>
+
+              <label>
+                <input type="file" />
+              </label>
+          </fieldset>
+
         </form>
       </div>
     );
