@@ -8,9 +8,9 @@ class Nome extends React.Component{
     if (value.length > 30) error = 'Nome muito extenso!'
 
     return (
-      <label>
+      <label htmlFor="nome">
         Nome Completo:
-        <input name="nome" type="nome" onChange={handleChange} value={value}/>
+        <input id="nome" name="nome" type="nome" onChange={handleChange} value={value}/>
         <span>{error ? error : ''}</span>
       </label>
     );

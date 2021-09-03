@@ -31,23 +31,24 @@ class Form extends React.Component {
         <form>
           <fieldset>
             <legend>Informações pessoais:</legend>
-              <Nome value={this.state.nome} handleChange={this.handleChange} />
+              <Nome value={this.state.nome} handleChange={this.handleChange} /><br /><br />
               <Email value={this.state.email} handleChange={this.handleChange} />
           </fieldset>
           <br />
           <fieldset>
             <legend>Textos e arquivos:</legend>
-              <label>
+              <label htmlFor="textarea">
               Escreva seu texto aqui:
-                <textarea name="textarea" id="textarea" onChange={this.handleChange} value={this.state.textarea} />
+                <textarea id="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea} />
               </label>
 
-              <label>
-                <input type="checkbox" name="checkbox" onChange={this.handleChange} value={this.state.checkbox}/>
+              <label htmlFor="checkbox">
+                Concorda com os termos?
+                <input id="checkbox" type="checkbox" name="checkbox" onChange={this.handleChange} value={this.state.checkbox}/>
               </label>
-
-              <label>
-                <input type="file" />
+              <br /><br />
+              <label htmlFor="file">
+                <input id="file" type="file" />
               </label>
           </fieldset>
 

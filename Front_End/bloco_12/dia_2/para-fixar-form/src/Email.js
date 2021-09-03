@@ -8,10 +8,10 @@ class Email extends React.Component{
     if (value !== 'trybe@trybe.com') error = 'Email incorreto!'
 
     return (
-      <label>
+      <label htmlFor="email">
         Email:
         <input 
-          name="email" type="email" onChange={handleChange} value={value}
+          id="email" name="email" type="email" onChange={handleChange} value={value}
         />
         <span>{error ? error : ''}</span>
       </label>
