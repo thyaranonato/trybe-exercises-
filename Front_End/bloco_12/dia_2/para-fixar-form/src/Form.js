@@ -1,4 +1,6 @@
 import React from 'react';
+import Nome from './Nome';
+import Email from './Email';
 
 class Form extends React.Component {
   constructor() {
@@ -7,6 +9,7 @@ class Form extends React.Component {
     this.handleChange = this.handleChange.bind(this);
 
     this.state = {
+      nome: '',
       email: '',
       textarea: '',
       checkbox: false,
@@ -28,14 +31,10 @@ class Form extends React.Component {
         <form>
           <fieldset>
             <legend>Informações pessoais:</legend>
-              <label>
-                Email:
-                <input 
-                  id="email" name="email" type="email" onChange={this.handleChange} value={this.state.email}
-                />
-              </label>
+              <Nome value={this.state.nome} handleChange={this.handleChange} />
+              <Email value={this.state.email} handleChange={this.handleChange} />
           </fieldset>
-
+          <br />
           <fieldset>
             <legend>Textos e arquivos:</legend>
               <label>
