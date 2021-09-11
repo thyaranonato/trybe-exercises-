@@ -1,3 +1,4 @@
+// Exercício finalizado com auxílio do gabarito
 window.onload = function() {
   function setBackgroundColor(color) {
     let content = document.querySelector(".content")
