@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react'
 import App from './App';
 
+// Exemplo 01
 afterEach(() => jest.clearAllMocks());
 it('fetch joke', async () => {
   const joke = {
@@ -24,6 +25,7 @@ it('fetch joke', async () => {
   );
 });
 
+// Exemplo 02
 afterEach(() => jest.clearAllMocks());
 it('should fetch users', async () => {
   const joke = {
