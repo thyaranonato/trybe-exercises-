@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import App from './App';
 import { createStore, combineReducers } from 'redux';
 import clickReducer from './reducers';
@@ -31,5 +31,26 @@ describe('testing clicks', () => {
     const { queryByText } = renderWithRedux(<App />, { initialState: { clickReducer: { counter: 5 }}});
 
     expect(queryByText('5')).toBeInTheDocument();
+  });
+  
+  // Para fixar: Crie um teste com o valor padrão do reducer e teste se um clique funciona.
+  test('se um clique funciona', () => {
+    const { queryByText } = renderWithRedux(<App />);
+    const buttonAdicionar = queryByText('Clique aqui');
+
+    expect(queryByText('0')).toBeInTheDocument();
+    expect(buttonAdicionar).toBeInTheDocument();
+    fireEvent.click(buttonAdicionar);
+  });
+
+  // Para fixar: Altere o valor inicial do counter para 10, faça um clique do botão e crie os testes para esses comportamentos.
+  test('valor inicial counter=10, testar clique', () => {
+    const { queryByText } = renderWithRedux(<App />, { initialState: { clickReducer: { counter: 10 }}});
+    const buttonAdicionar = queryByText('Clique aqui');
+
+    expect(queryByText('10')).toBeInTheDocument();
+    expect(buttonAdicionar).toBeInTheDocument();
+    fireEvent.click(buttonAdicionar);
+    expect(queryByText('11')).toBeInTheDocument();
   });
 });
