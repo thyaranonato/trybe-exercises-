@@ -1,0 +1,1 @@
+Esta pasta contém todos os exercícios resolvidos durante o bloco 21.
