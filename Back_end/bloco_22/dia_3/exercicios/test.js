@@ -44,4 +44,18 @@ describe('Executa a função "numerosNaturaisFunc"', () => {
       });
     });
   });
+
+  describe('Quando o valor passado não for um número', () => {
+    describe('a resposta', () => {
+      it('é uma string', () => {
+        const resposta = numerosNaturaisFunc('not');
+        expect(resposta).to.be.a('string');
+      });
+
+      it('é igual a "o valor deve ser um número"', () => {
+        const resposta = numerosNaturaisFunc('not');
+        expect(resposta).to.be.equals('o valor deve ser um número');
+      });
+    });
+  });
 });
