@@ -46,6 +46,29 @@ app.post('/recipes', function (req, res) {
   res.status(201).json({ message: 'Recipe created successfully!'});
 });
 
+app.put('/recipes/:id', function (req, res) {
+  const { id } = req.params;
+  const { name, price } = req.body;
+  const recipeIndex = recipes.findIndex((r) => r.id === parseInt(id));
+
+  if (recipeIndex === -1) return res.status(404).json({ message: 'Recipe not found!' });
+
+  recipes[recipeIndex] = { ...recipes[recipeIndex], name, price };
+
+  res.status(204).end();
+});
+
+app.delete('/recipes/:id', function (req, res) {
+  const { id } = req.params;
+  const recipeIndex = recipes.findIndex((r) => r.id === parseInt(id));
+
+  if (recipeIndex === -1) return res.status(404).json({ message: 'Recipe not found!' });
+
+  recipes.splice(recipeIndex, 1);
+
+  res.status(204).end();
+});
+
 // app.get('/drinks', function (req, res) {
 //   res.json(drinks);
 // });
@@ -79,3 +102,9 @@ app.listen(3001, () => {
 app.listen(3000, () => {
   console.log('Aplicação ouvindo na porta 3000');
 });
+
+app.all('*', function (req, res) {
+  return res.status(404).json({ message: `Rota '${req.path}' não existe!`});
+});
+
+app.listen(3001);
