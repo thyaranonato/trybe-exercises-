@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 const cors = require('cors');
 
 app.use(cors());
@@ -38,6 +40,12 @@ app.get('/recipes/search', function (req, res) {
   res.status(200).json(filteredRecipes);
 });
 
+app.post('/recipes', function (req, res) {
+  const { id, name, price } = req.body;
+  recipes.push({ id, name, price});
+  res.status(201).json({ message: 'Recipe created successfully!'});
+});
+
 // app.get('/drinks', function (req, res) {
 //   res.json(drinks);
 // });
@@ -55,6 +63,13 @@ app.get('/drinks/search', function (req, res) {
   const { name, maxPrice, minPrice } = req.query;
   const filteredDrinks = drinks.filter((d) => d.name.includes(name) && d.price < parseInt(maxPrice) && d.price >= parseInt(minPrice));
   res.status(200).json(filteredDrinks);
+});
+
+app.get('/validateToken', function (req, res) {
+  const token = req.headers.authorization;
+  if (token.length !== 16) return res.status(401).json({message: 'Invalid Token!'});
+
+  res.status(200).json({message: 'Valid Token!'});
 });
 
 app.listen(3001, () => {
