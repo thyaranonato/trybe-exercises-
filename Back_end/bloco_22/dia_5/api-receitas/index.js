@@ -28,13 +28,20 @@ app.get('/recipes/:id', function (req, res) {
   res.status(200).json(recipe);
 });
 
-app.post('/recipes', function (req, res) {
+function validateName(req, res, next) {
+  const { name } = req.body;
+  if (!name || name === '') return res.status(400).json({ message: 'Invalid data!'});
+
+  next();
+};
+
+app.post('/recipes', validateName, function (req, res) {
   const { id, name, price, waitTime } = req.body;
   recipes.push({ id, name, price, waitTime});
   res.status(201).json({ message: 'Recipe created successfully!'});
 });
 
-app.put('/recipes/:id', function (req, res) {
+app.put('/recipes/:id', validateName, function (req, res) {
   const { id } = req.params;
   const { name, price, waitTime } = req.body;
   const recipeIndex = recipes.findIndex((r) => r.id === parseInt(id));
