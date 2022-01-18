@@ -56,6 +56,18 @@ app.post('/authors', async (req, res) => {
   res.status(201).json({ message: 'Autor criado com sucesso! '});
 });
 
+app.post('/books', async (req, res) => {
+  const { title, author_id } = req.body;
+  
+  if (!await Book.isValid(title, author_id)) {
+    return res.status(400).json({ message: 'Dados inválidos' });
+  }
+  
+  await Book.create(title, author_id);
+  
+  res.status(201).json({ message: 'Livro criado com sucesso! '});
+  });
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
