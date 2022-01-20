@@ -1,4 +1,4 @@
-const Author = require('../models/Authors');
+const Author = require('../models/Author');
 
 const getNewAuthor = (authorData) => {
   const { id, firstName, middleName, lastName } = authorData;
