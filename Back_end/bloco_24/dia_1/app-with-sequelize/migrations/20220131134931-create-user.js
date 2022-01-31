@@ -1,6 +1,6 @@
 'use strict';
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Users', {
       id: {
         allowNull: false,
@@ -9,6 +9,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       fullName: {
+        type: Sequelize.STRING
+      },
+      // adicionamos um novo campo 'email' como foi feito no model!
+      email: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -21,7 +25,7 @@ module.exports = {
       }
     });
   },
-  async down(queryInterface, Sequelize) {
+  down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('Users');
   }
 };
