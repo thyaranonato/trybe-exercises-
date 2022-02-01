@@ -10,5 +10,7 @@ app.get('/books', BooksController.getAll);
 
 app.get('/book/:id', BooksController.getById);
 
+app.post('/book', BooksController.createNew);
+
  const PORT = 3000;
  app.listen(PORT, () => console.log(`Ouvindo na porta ${PORT}!`));
