@@ -41,8 +41,31 @@ const createNew = async (req, res) => {
   }
 };
 
+const updateById = async (req, res) => {
+  try {
+    const { title, author, pageQuantity } = req.body;
+    const { id } = req.params;
+
+    const book = await Book.update(
+      {
+      title,
+      author,
+      pageQuantity,
+      },
+      { where: { id } },
+    );
+
+    res.status(200).json(book);
+  }
+  catch (e) {
+    console.log(e.message);
+    res.status(500).json({ message: 'Algo deu errado' });
+  }
+};
+
 module.exports = {
   getAll,
   getById,
   createNew,
+  updateById,
 };
