@@ -63,9 +63,24 @@ const updateById = async (req, res) => {
   }
 };
 
+const deleteById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const bookDeleted = await Book.findByPk(id);
+    await bookDeleted.destroy();
+
+    res.status(200).json(bookDeleted);
+  }
+  catch (e) {
+    console.log(e.message);
+    res.status(500).json({ message: 'Algo deu errado' });
+  }
+};
+
 module.exports = {
   getAll,
   getById,
   createNew,
   updateById,
+  deleteById,
 };
