@@ -14,6 +14,8 @@ module.exports = {
     database: process.env.MYSQL_DATABASE,
     host: process.env.HOSTNAME,
     dialect: 'mysql',
+    // adicione essa linha a sua configuração para omitir mensagens de log no orm
+    logging: false,
   },
   production: {
     username: process.env.MYSQL_USER,
