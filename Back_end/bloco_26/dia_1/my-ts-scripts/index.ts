@@ -2,6 +2,7 @@ import * as Comprimento from './exercise01/length';
 import * as Massa from './exercise02/mass';
 import * as Capacidade from './exercise03/capacity';
 import * as Area from './exercise04/area';
+import * as Volume from './exercise05/volume';
 
 console.log(`10 cm correspondem a: ${Comprimento.convert(10, "cm", "m")} m`);
 console.log(`5 km correspondem a: ${Comprimento.convert(5, "km", "m")} m`);
@@ -18,3 +19,7 @@ console.log(`20 dal correspondem a: ${Capacidade.convert(20, "dal", "ml")} ml`);
 console.log(`10 cm² correspondem a: ${Area.convert(10, "cm²", "m²")} m²`);
 console.log(`5 km² correspondem a: ${Area.convert(5, "km²", "m²")} m²`);
 console.log(`20 dam² correspondem a: ${Area.convert(20, "dam²", "mm²")} mm²`);
+
+console.log(`10 cm³ correspondem a: ${Volume.convert(10, "cm³", "m³")} m³`);
+console.log(`5 km³ correspondem a: ${Volume.convert(5, "km³", "m³")} m³`);
+console.log(`20 dam³ correspondem a: ${Volume.convert(20, "dam³", "mm³")} mm³`);
