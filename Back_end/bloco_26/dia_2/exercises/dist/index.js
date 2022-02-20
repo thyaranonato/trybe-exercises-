@@ -44,3 +44,19 @@ console.log(gol.stop());
 console.log(gol.openTheDoor(exercise04_1.Doors.BEHIND_RIDE));
 console.log(gol.closeTheDoor(exercise04_1.Doors.BEHIND_RIDE));
 console.log(gol.speeddUp());
+// Exercício 6
+const calabresa = {
+    flavor: "Calabresa",
+    slices: 8
+};
+console.log(calabresa);
+const marguerita = {
+    flavor: "Marguerita",
+    slices: 6
+};
+console.log(marguerita);
+const nutela = {
+    flavor: "Nutela",
+    slices: 4
+};
+console.log(nutela);
