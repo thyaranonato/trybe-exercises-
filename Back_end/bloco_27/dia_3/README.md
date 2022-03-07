@@ -1,0 +1,1 @@
+Esta pasta contém todos os exercícios desenvolvidos durante o dia 3 do bloco 27.
