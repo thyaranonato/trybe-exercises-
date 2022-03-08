@@ -13,5 +13,5 @@ Precisamos ter os endpoints:
 * **GET /sunny/:id**: retorna uma planta que precisa de sol com o id.
 
 **Bônus**
-Crie um banco de dados para persistir os dados das plantas.
-Divida a aplicação em camadas.
+* Crie um banco de dados para persistir os dados das plantas.
+* Divida a aplicação em camadas.
