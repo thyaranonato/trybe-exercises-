@@ -1,0 +1,1 @@
+Esta pasta contém todos os exercícios desenvolvidos no dia 4 do bloco 27 - Introdução aos princípios SOLID.
