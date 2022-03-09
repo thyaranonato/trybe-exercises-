@@ -1,110 +1,48 @@
-import fs from 'fs/promises';
+import express from 'express';
+import PlantsModule from './Plants';
 
-interface IPlant {
-  id: string,
-  breed: string,
-  needsSun: Boolean,
-  origin: string,
-  size: number,
-  specialCare?: { waterFrequency: number }
-}
+const app = express();
 
-interface IOpsInfo { createdPlants: number }
+app.use(express.json());
 
-class Plants {
-  initPlant(plant: IPlant) {
-    const { id, breed, needsSun, origin, specialCare, size } = plant;
+app.get('/plants', async (_req, res) => {
+  const plants = await (new PlantsModule().getPlants());
 
-    const waterFrequency = needsSun
-      ? size * 0.77 + (origin === 'Brazil' ? 8 : 7)
-      : (size / 2) * 1.33 + (origin === 'Brazil' ? 8 : 7);
+  res.send(plants);
+});
 
-    const newPlant: IPlant = {
-      id,
-      breed,
-      needsSun,
-      origin,
-      specialCare: {
-        ...specialCare,
-        waterFrequency,
-      },
-      size,
-    };
-    return newPlant;
-  }
+app.get('/plants/:id', async (req, res) => {
+  const { id } = req.params;
+  const plant = await (new PlantsModule().getPlantById(id));
+  res.send(plant);
+});
 
-  async getPlants() {
-    const plantsRaw = await fs.readFile('plants.json', { encoding: 'utf8' });
-    const plants: IPlant[] = JSON.parse(plantsRaw);
-    return plants;
-  }
+app.delete('/plants/:id', async (req, res) => {
+  const { id } = req.params;
+  const plant = await (new PlantsModule().removePlantById(id));
+  res.send(plant);
+});
 
-  async getPlantById(id: string) {
-    const plantsRaw = await fs.readFile('plants.json', { encoding: 'utf8' });
-    const plants: IPlant[] = JSON.parse(plantsRaw);
+app.put('/plants/:id', async (req, res) => {
+  const { id } = req.params;
+  const newPlant = req.body;
+  const plant = await (new PlantsModule().editPlant(id, newPlant));
+  res.send(plant);
+});
 
-    const plantById = plants.find((plant) => plant.id === id);
-    if (!plantById) return null;
-    return plantById;
-  }
+app.post('/plants', async (req, res) => {
+  const newPlant = req.body;
 
-  async removePlantById(id: string) {
-    const plantsRaw = await fs.readFile('plants.json', { encoding: 'utf8' });
-    const plants: IPlant[] = JSON.parse(plantsRaw);
+  const plant = await (new PlantsModule().savePlant(newPlant));
+  res.send(plant);
+});
 
-    const removedPlant = plants.find((plant) => plant.id === id);
-    if (!removedPlant) return null;
+app.get('/sunny/:id', async (req, res) => {
+  const { id } = req.params;
+  const plant = await (new PlantsModule().getPlantsThatNeedsSunWithId(id));
+  res.send(plant);
+});
 
-    const newPlants = plants.filter((plant) => plant.id !== id);
-    await fs.writeFile('plants.json', JSON.stringify(newPlants));
-
-    return removedPlant;
-  }
-
-  async getPlantsThatNeedsSunWithId(id: string) {
-    const plantsRaw = await fs.readFile('plants.json', { encoding: 'utf8' });
-    const plants: IPlant[] = JSON.parse(plantsRaw);
-
-    const filteredPlants = plants.filter((plant) => {
-      if (plant.needsSun && plant.id === id) {
-        if (!plant.specialCare || plant.specialCare.waterFrequency > 2) {
-          return true;
-        }
-      }
-
-      return false;
-    });
-    return filteredPlants;
-  }
-
-  async editPlant(plantId: string, newPlant: IPlant) {
-    const plantsRaw = await fs.readFile('plants.json', { encoding: 'utf8' });
-    const plants: IPlant[] = JSON.parse(plantsRaw);
-
-    const updatedPlants = plants.map((plant) => {
-      if (plant.id === plantId) return newPlant;
-      return plant;
-    });
-
-    await fs.writeFile('plants.json', JSON.stringify(updatedPlants));
-    return newPlant;
-  }
-
-  async savePlant(plant: IPlant) {
-    const plantsRaw = await fs.readFile('plants.json', { encoding: 'utf8' });
-    const plants: IPlant[] = JSON.parse(plantsRaw);
-
-    const newPlant = this.initPlant({ ...plant });
-    plants.push(newPlant);
-
-    const opsInfoRaw = await fs.readFile('opsInfo.json', { encoding: 'utf8' });
-    let { createdPlants }: IOpsInfo = JSON.parse(opsInfoRaw);
-    createdPlants += 1;
-    await fs.writeFile('opsInfo.json', JSON.stringify({ createdPlants }));
-
-    await fs.writeFile('plants.json', JSON.stringify(plants));
-    return newPlant;
-  }
-}
-
-export default Plants;
+app.listen(3001, () => {
+  console.log('Ouvindo a porta 3001!');
+});
