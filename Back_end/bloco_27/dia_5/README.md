@@ -1,0 +1,1 @@
+Esta pasta contém todos os exercícios desenvolvidos durante o dia 5 do bloco 27 - SOLID - Princípios L e I.
