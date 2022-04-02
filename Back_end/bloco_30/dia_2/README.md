@@ -1,0 +1,1 @@
+Esta pasta contém todos os exercícios desenvolvidos no segundo dia de conteúdo do bloco 30, MongoDB e POO.
