@@ -1,0 +1,1 @@
+Esta pasta contém todos os exercícios desenvolvidos ao longo do dia 01, bloco 29.

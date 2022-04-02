@@ -1,0 +1,1 @@
+Esta pasta contém todos os exercícios desenvolvidos ao longo do bloco 30, MongoDB com Node.js e POO.

@@ -1,0 +1,1 @@
+Esta pasta contém todos os exercícios desenvolvidos no primeiro dia de conteúdo, MongoDB e arquitetura MSC.
